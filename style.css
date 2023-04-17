@@ -70,6 +70,18 @@ main {
   overflow-y: scroll;
 }
 
+/*스크롤바 설정*/
+.container::-webkit-scrollbar {
+  width:6px;
+}
+/* 스크롤바 막대 설정 */
+.container::-webkit-scrollbar-thumb {
+  height: 11%;
+  background-color: var(--color-mint);
+}
+
+
+
 .card {
   display: flex;
   flex-flow: column nowrap;
@@ -102,5 +114,8 @@ main {
 @media (max-width: 700px) {
   .card {
     background: var(--color-gray);
+  }
+  .card > span {
+    font-size: 0.7rem;
   }
 }
