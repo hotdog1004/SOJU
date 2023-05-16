@@ -11,7 +11,3 @@ document.getElementById("closeModal").onclick = () => {
 const closeModal = () => {
   document.getElementById("modal").style.display = "none";
 };
-
-// function closeModal() {
-//   document.getElementById("modal").style.display = "none";
-// }

@@ -1,5 +1,18 @@
-// const addItem = (name, image, content) => {
-function addItem(name, image, content) {
+let image = "";
+const images = [
+  "237",
+  "40",
+  "219",
+  "200",
+  "433",
+  "582",
+  "577",
+  "593",
+  "659",
+  "718",
+];
+
+const addItem = (name, image, content) => {
   const div = document.createElement("div");
   div.classList.add("card");
   div.innerHTML = `
@@ -12,19 +25,26 @@ function addItem(name, image, content) {
   const span = document.createElement("span");
   span.innerHTML = `🐈${name}`;
   document.querySelector("#sidebar").appendChild(span);
-}
+};
 
-// const addItemHandle = (e) => {
-function addItemHandle(e) {
+const addItemHandle = (e) => {
   e.preventDefault();
   const name = document.getElementById("name").value;
-  const image = document.getElementById("image").value;
   const content = document.getElementById("content").value;
 
   addItem(name, image, content);
   closeModal();
-}
+};
 
-document
-  .getElementById("addItemForm")
-  .addEventListener("submit", addItemHandle);
+const checkImg = (e) => {
+  e.preventDefault();
+  image = document.getElementById("image").value;
+  if (image === "") {
+    alert("등록된 이미지가 없으므로 랜덤 이미지가 등록됩니다.");
+    const randomImg = images[Math.floor(Math.random() * images.length)];
+    image = `https://picsum.photos/id/${randomImg}/200/300`;
+  }
+  addItemHandle(e);
+};
+
+document.getElementById("addItemForm").addEventListener("submit", checkImg);
