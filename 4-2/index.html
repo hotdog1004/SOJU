@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>나는 고양이</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <header>
+    <span class="title">나는 고양이 딱지🐱</span>
+  </header>
+  <main>
+    <div class="sidebar" id="sidebar">
+      <button type="button" class="add-button" id="addItem">추가</button>
+      <span>👔딱지</span>
+      <span>👀딱지</span>
+      <span>😴딱지</span>
+      <span>👅딱지</span>
+      <span>😪딱지</span>
+    </div>
+    <section class="container scroll" id="container">
+      <div class="card">
+        <img src="../2-2/images/cat1.jpg" alt="신입딱지" />
+        <span>출근하는 딱지여요</span>
+      </div>
+      <div class="card">
+        <img src="../2-2/images/cat2.jpg" alt="씨씨티비딱지" />
+        <span>CCTV 딱지여요</span>
+      </div>
+      <div class="card">
+        <img src="../2-2/images/cat3.jpg" alt="귀찮딱지" />
+        <span>lazy 딱지여요</span>
+      </div>
+      <div class="card">
+        <img src="../2-2/images/cat4.jpg" alt="메롱딱지" />
+        <span>메롱 딱지여요</span>
+      </div>
+      <div class="card">
+        <img src="../2-2/images/cat5.jpg" alt="졸린딱지" />
+        <span>졸린 딱지여요</span>
+      </div>
+    </section>
+  </main>
+  <div class="modal-background" id="modal">
+    <form class="modal" id="addItemForm">
+      <span class="modal-close" id="closeModal">X</span>
+      <label for="name" class="label">이름</label>
+      <input id="name" type="text" placeholder="고양이 이름을 입력하세요." class="input" maxlength="10" required />
+      <label for="image" class="label">사진</label>
+      <input id="image" type="text" placeholder="URL을 입력하세요." class="input" required/>
+      <label for="content" class="label">내용</label>
+      <input id="content" type="text" placeholder="내용을 입력하세요." class="input" required />
+      <button type="submit" class="submit-button">저장</button>
+    </form>
+  </div>
+  <script src="./modal.js"></script>
+  <script src="./addItem.js"></script>
+</body>
+</html>
