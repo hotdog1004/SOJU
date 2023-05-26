@@ -1,6 +1,17 @@
 import { useState } from "react";
 
-export default function Word({ word: w }) {
+interface IProps {
+  word: IWord;
+}
+export interface IWord {
+  day : string,
+  eng : string,
+  kor : string,
+  isDone : boolean,
+  id : number
+}
+
+export default function Word({ word: w }: IProps) {
   const [word, setWord] = useState(w);
   const [isShow, setIsShow] = useState(false);
   // 처음엔 뜻이 안 보여야하니 초기값을 false로 준다.
@@ -34,7 +45,10 @@ export default function Word({ word: w }) {
       }).then((res) => {
         if (res.ok) {
           // 삭제가 잘 처리 됐으면 word의 id를 0으로 세팅한다.
-          setWord({ id: 0 });
+          setWord({ 
+            ...word,
+            id: 0,
+           });
         }
       });
     }
