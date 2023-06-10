@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function Modal(isModalShow, handleModal, handleAddItem) {
+export default function Modal({ isModalShow, handleModal, handleAddItem }) {
   const [name, setName] = useState("");
   const [title, setTitle] = useState("");
   const [image, setImage] = useState("");
@@ -8,6 +8,7 @@ export default function Modal(isModalShow, handleModal, handleAddItem) {
 
   const onSubmit = (e) => {
     e.preventDefault();
+
     handleAddItem({ name, content, image, title });
     handleModal(false);
   };
@@ -32,7 +33,7 @@ export default function Modal(isModalShow, handleModal, handleAddItem) {
           onChange={(e) => setName(e.target.value)}
         />
         <label htmlFor="title" className="label">
-          이름
+          타이틀
         </label>
         <input
           id="title"
