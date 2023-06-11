@@ -53,8 +53,6 @@ export default function App() {
   };
 
   const onErrorImg = (e) => {
-    // console.log(e);
-    console.log("에러");
     e.target.src = defaultImg;
   };
 
