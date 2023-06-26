@@ -6,7 +6,8 @@
         "outDir": "bulid",
         "esModuleInterop": true,
         "target": "ES6",
-        "lib": ["ES6", "dom"],
-        "strict": true
+        "lib": ["ES6"],
+        "strict": true,
+        "module": "CommonJS"
     }
 }
